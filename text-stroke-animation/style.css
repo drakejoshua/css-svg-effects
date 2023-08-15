@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 100vw;
+    height: 100vh;
+}
+svg text {
+    font-size: 206px;
+    fill-opacity: 0;
+    stroke-width: 1px;
+    stroke: black;
+    stroke-linejoin: round;
+    stroke-dasharray: 180;
+    animation: animate 1s ease-in-out infinite forwards;
+}
+
+@keyframes animate {
+    0%, 30%, 100% {
+        stroke-dashoffset: 0;
+    }
+    50%, 70% {
+        stroke-dashoffset: 160;
+    }
+}
