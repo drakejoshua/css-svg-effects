@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+div#blob {
+    height: 1000px;
+    width: 700px;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+svg path {
+    fill: black;
+}
