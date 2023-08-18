@@ -1,0 +1,44 @@
+/* 
+    the main concept here is using the svg turbulence filter with a very 
+    low base frequency and any number of numOctaves to create the wavy/paintish text effect by
+    then adding the filter to the body
+
+    [?]: animating the text makes it appear as if it's moving over a wavy surface
+
+    [!]: if you add this filter to the h2 instead of the body, you get no animation 
+        effect only the text effect
+*/
+
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    filter: url(#wavy);
+}
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 96px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: capitalize;
+    animation: wavy 3s linear infinite;
+    animation-direction: alternate;
+}
+svg {
+    width: 0;
+    height: 0;
+}
+
+
+@keyframes wavy {
+    0% {
+        transform: translate( -50%, 50% )
+    }
+    100% {
+        transform: translate( -50%, -50% )
+    }
+}
