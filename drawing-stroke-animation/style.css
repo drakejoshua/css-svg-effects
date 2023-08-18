@@ -1,0 +1,29 @@
+/* 
+    the main concept here is using an inline svg element in order to be animatable directly from css
+
+    you set the stroke-dasharray to be the total length of the path in the svg( pathDOMObject.getTotalLength() )
+    in order to make sure that you have a dash pattern that only shows a single dash and no gaps( the gaps are outside the path )
+
+    then you animate the stroke-dashoffset from the same value as the stroke-dasharray till zero in order to gradually reduce the offset
+    to zero. the animation gradually reveals the hidden dash using the changing offset
+*/
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+svg path {
+    stroke-dasharray: 4362;
+    animation: draw 8s linear 1;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: -4362;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
